@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UP Police Leave Management - Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f5f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+    width:360px;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    color:#0b3d91;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0b3d91;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#062d6f;
+}
+
+.footer{
+    text-align:center;
+    margin-top:15px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+
+<script>
+function login(){
+
+let pno=document.getElementById("pno").value;
+let pass=document.getElementById("pass").value;
+
+if(pno=="1001" && pass=="admin123"){
+    alert("Login Successful");
+    window.location.href="dashboard.html";
+}
+else{
+    alert("Invalid PNO Number or Password");
+}
+
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>UP Police Leave Management</h2>
+
+<input type="text" id="pno" placeholder="Enter PNO Number">
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+<div class="footer">
+Special Enquiry Unit<br>
+Version 1.0
+</div>
+
+</div>
+
+</body>
+</html>
