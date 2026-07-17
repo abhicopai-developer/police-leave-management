@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Leave | UP Police Leave Management</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f9;
+}
+
+.header{
+    background:#0B3D91;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#0B3D91;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#072d6b;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#555;
+}
+
+.success{
+    color:green;
+    font-weight:bold;
+    margin-top:15px;
+    text-align:center;
+}
+</style>
+
+<script>
+function submitLeave(){
+
+let pno=document.getElementById("pno").value;
+let name=document.getElementById("name").value;
+let type=document.getElementById("type").value;
+let from=document.getElementById("from").value;
+let to=document.getElementById("to").value;
+
+if(pno=="" || name=="" || from=="" || to==""){
+    alert("Please fill all mandatory fields.");
+    return;
+}
+
+document.getElementById("msg").innerHTML =
+"✅ Leave Application Submitted Successfully.<br><br>Status : Pending Approval";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+<h2>UP Police Leave Management System</h2>
+<p>Leave Application Form</p>
+</div>
+
+<div class="container">
+
+<label>PNO Number</label>
+<input type="text" id="pno" placeholder="Enter PNO">
+
+<label>Employee Name</label>
+<input type="text" id="name" placeholder="Enter Name">
+
+<label>Rank</label>
+<input type="text" placeholder="SI / Inspector / HC / Constable">
+
+<label>Unit</label>
+<input type="text" value="Special Enquiry">
+
+<label>Leave Type</label>
+<select id="type">
+<option>Casual Leave (CL)</option>
+<option>Earned Leave (EL)</option>
+<option>Medical Leave</option>
+<option>Half Pay Leave (HPL)</option>
+<option>Permission</option>
+</select>
+
+<label>From Date</label>
+<input type="date" id="from">
+
+<label>To Date</label>
+<input type="date" id="to">
+
+<label>Reason</label>
+<textarea rows="4" placeholder="Reason for Leave"></textarea>
+
+<button onclick="submitLeave()">Submit Leave</button>
+
+<div id="msg" class="success"></div>
+
+</div>
+
+<div class="footer">
+© 2026 UP Police Leave Management System
+</div>
+
+</body>
+</html>
